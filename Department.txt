@@ -1,0 +1,36 @@
+package map;
+
+public class Department {
+
+private int DepId;
+private String DepName;
+private String EmpName;
+public Department(int depId, String depName, String empName) {
+	super();
+	DepId = depId;
+	DepName = depName;
+	EmpName = empName;
+}
+public int getDepId() {
+	return DepId;
+}
+public void setDepId(int depId) {
+	DepId = depId;
+}
+public String getDepName() {
+	return DepName;
+}
+public void setDepName(String depName) {
+	DepName = depName;
+}
+public String getEmpName() {
+	return EmpName;
+}
+public void setEmpName(String empName) {
+	EmpName = empName;
+}
+@Override
+public String toString() {
+	return "Department [DepId=" + DepId + ", DepName=" + DepName + ", EmpName=" + EmpName + "]";
+}
+}

@@ -1,0 +1,17 @@
+package map;
+import java.util.HashMap;
+public class Map {
+	public static void main(String[]args)
+	{
+		HashMap Department=new HashMap();
+		Department.put(101, new Department(101,"I.T","Ram"));
+		Department.put(102, new Department(102,"HR","Krishna"));
+		Department.put(103, new Department(103,"Operations","shiva"));
+		Department.forEach((a,b)->System.out.println(a+"="+b));
+		System.out.println(Department.get(103));
+		Department.put(103, new Department(103,"Operations","sai"));
+		System.out.println(Department.get(103));
+	}
+	
+
+}

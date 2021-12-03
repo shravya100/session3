@@ -1,0 +1,22 @@
+package tree;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.HashMap;
+
+public class TreeMapping {
+	public static void main(String args[])
+	{
+		TreeMap<String,Employee> map=new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+		map.put("Supraja", new Employee(11,"Supraja",101));
+		map.put("Mounika",new Employee(12,"Mounika",102) );
+		map.put("Niharika",new Employee(13,"Niharika",103));
+		map.put("Sneha", new Employee(14,"Sneha",104));
+		map.put("Shailu", new Employee(15,"Shailu",105));
+		map.forEach((u,v)->System.out.println(u+"="+v));
+	    System.out.println(map.get("NIHARIKA"));
+	    System.out.println(map.get("SUPRAJA"));
+	    System.out.println(map.get("SAHITHI"));
+		
+	}
+
+}

@@ -1,0 +1,36 @@
+package tree;
+
+public class Employee {
+	private int EmpId;
+	private String EmpName;
+	private int DepId;
+	public Employee(int empId, String empName, int depId) {
+		super();
+		EmpId = empId;
+		EmpName = empName;
+		DepId = depId;
+	}
+	public int getEmpId() {
+		return EmpId;
+	}
+	public void setEmpId(int empId) {
+		EmpId = empId;
+	}
+	public String getEmpName() {
+		return EmpName;
+	}
+	public void setEmpName(String empName) {
+		EmpName = empName;
+	}
+	public int getDepId() {
+		return DepId;
+	}
+	public void setDepId(int depId) {
+		DepId = depId;
+	}
+	@Override
+	public String toString() {
+		return "Employee [EmpId=" + EmpId + ", EmpName=" + EmpName + ", DepId=" + DepId + "]";
+	}
+}
+	

@@ -1,0 +1,23 @@
+package example;
+
+
+public class NullpointerExcep {
+
+	
+	public static void main(String[] args) {
+
+			
+		  try {
+			  
+	          
+	            String name =  null;
+	            System.out.println(name.length());
+	 
+		  }
+		  
+	
+		  catch (NullPointerException e) {
+	            System.err.println("Null pointer Exception caught");
+		  }
+}
+}

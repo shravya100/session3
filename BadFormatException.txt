@@ -1,0 +1,13 @@
+package bank;
+import java.io.IOException;
+
+public class InsufficientBalance extends Exception
+{
+	String message="There is insufficient balance in your account";
+
+public InsufficientBalance(String message) {
+		super( message);
+		
+	}
+}
+

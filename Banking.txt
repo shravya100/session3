@@ -1,0 +1,16 @@
+package bank;
+public class Banking {
+
+	public static void main(String[] args) throws Exception{
+	System.out.println("Welcome to Banking App");
+	
+		BankAccount b=new BankAccount();
+	b.CreateAccount();
+
+b.search();
+b.deposit();
+b.withdrawl();
+b.printAccountDetails();
+	}
+
+}

@@ -1,0 +1,83 @@
+package bank;
+
+import java.util.Scanner;
+
+public class BankAccount {
+	
+	String accountHolderName;
+	int accountNumber;
+	double accountBalance;
+	Scanner sc = new Scanner(System.in);  
+	public BankAccount() {
+//		super();
+		this.accountHolderName = accountHolderName;
+		this.accountNumber = accountNumber;
+		this.accountBalance = accountBalance;
+	}
+	public void CreateAccount() {  
+		System.out.print("Enter Name: "); 
+	        accountHolderName = sc.next();   
+	        System.out.print("Enter Account No: ");
+	        accountNumber= sc.nextInt();  
+	        System.out.print("Enter Balance: ");  
+	        accountBalance = sc.nextDouble();
+	        
+	        System.out.println("Account created Sucessfully");
+	 }
+	public void search()
+	{  
+		
+		System.out.println("enter the account number");
+	    int accountNumb = sc.nextInt();
+        if (accountNumber==accountNumb)
+        {  
+              
+         System.out.println("account matched: ");    
+        }  
+    else
+    {
+    	System.out.println("Not matched");
+    }
+	}
+
+	  public void printAccountDetails()
+		{
+		  System.out.println("The user account details are:");
+			System.out.println(accountHolderName+" "+accountNumber+" "+accountBalance);
+		}
+	
+	public void deposit() 
+	{
+		System.out.println( "Enter how much money you want to deposit: ");
+		double amount = sc.nextDouble();
+		if(amount<0)
+		{
+			throw new BadFormatException("negative amount is invalid");
+		}
+		 
+		accountBalance+= amount;
+		System.out.println("Account Balance is"+accountBalance);
+	}
+public double withdrawl() throws InsufficientBalance
+{
+	System.out.println("Enter how much money you want to withdraw: ");
+	double amount = sc.nextDouble();
+	
+	if(amount<0)
+	{
+		throw new BadFormatException("negative amount is invalid");
+	}
+
+	if(amount>accountBalance)
+	{
+		throw new InsufficientBalance("Available balance:Rs "+accountBalance+" WithDrawl request :"+amount+" transaction cannot completed");
+		
+	}
+	 
+	 accountBalance-=amount;
+     System.out.println("\n Available balance: " + accountBalance); 
+	
+	 return accountBalance;
+}
+
+}

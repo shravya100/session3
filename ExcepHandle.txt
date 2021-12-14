@@ -1,0 +1,27 @@
+package example;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class ExcepHandle {
+
+	public static void main(String[]args) {
+		int myArr[]= {10,20,30,40};
+		System.out.println("Elements in the array are:");
+		System.out.println(Arrays.toString(myArr));
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the index of required element");
+		try
+		{
+			int element=scan.nextInt();
+			System.out.println("Element in the given Index"+myArr[element]);
+			
+		}
+		
+	
+	catch(ArrayIndexOutOfBoundsException e) {
+        System.err.println("The index you have entered is invalid");
+        System.err.println("Please enter an index number between 0 and 3");
+     }
+  }
+}

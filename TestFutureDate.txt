@@ -1,0 +1,31 @@
+package samp;
+import java.text.SimpleDateFormat;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.util.Date;
+
+public class TestFutureDate {
+	public static void main(String[]args)throws Exception
+	{
+		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-mm-dd");
+		//LocalDate id= LocalDate.now(Clock.systemUTC());
+	//	System.out.println("present Date is printing"); 
+	String date1str="2021-12-09";
+	String date2str="15-12-2025";
+		
+     Date date1 =  dateFormat.parse(date1str); 
+     Date date2 =  dateFormat.parse(date2str);      
+    
+     if(date1.after(date2)){
+        System.out.println(date1str+ "is after" +date2str);
+     }
+     else if(date1.before(date2))
+     {
+        System.out.println(date1str+" is before "+date2str);
+     }
+     else if(date1.equals(date2))
+     {
+         System.out.println(date1str+ " is equals to " +date2str);
+     }
+	}  
+}

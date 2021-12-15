@@ -1,0 +1,88 @@
+package test;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class UserManager_1 {
+
+	Map<Integer,User_1> UserMap=new HashMap<>();
+	static Scanner sc=new Scanner(System.in);
+//	public void LoadStaticDataInMap()
+//	{
+//		User_1 user1=new User_1("Ravi","Dev",101,LocalDate.of(2021,12,15));
+//		User_1 user2=new User_1("Srinivas","Tester",111,LocalDate.of(2021, 12, 11));
+//		User_1 user3=new User_1("Naresh","Dev",105,LocalDate.of(2021, 12, 12));
+//		User_1 user4=new User_1("Sai","Tester",114,LocalDate.of(2021, 12, 15));
+//		User_1 user5=new User_1("Raj","Dev",110,LocalDate.of(2021, 12, 14));
+//		UserMap.put(user1.getUserId(),user1);
+//		UserMap.put(user2.getUserId(),user2);
+//		UserMap.put(user3.getUserId(),user3);
+//		UserMap.put(user4.getUserId(),user4);
+//		UserMap.put(user5.getUserId(),user5);
+//	}
+//	
+	
+	public boolean updateUserById(Integer UserId)
+		
+		
+		{
+		if(Objects.isNull(UserId))
+				
+			throw new BadFormatException("User Id is not valid: ["+UserId+"]");
+		
+				
+if(!UserMap.containsKey(UserId))
+
+	throw new UserNotFoundException("No user found by given Id:["+UserId+"]");
+	User_1 user1=UserMap.get(UserId);
+	System.out.println("Enter UserName");
+	user1.setUserName(sc.next());
+	System.out.println("Enter User Role");
+	user1.setRole(sc.next());
+	System.out.println("updated user details successfully");
+	return true;
+	
+}
+	public void PrintMap()
+	{
+		System.out.println(UserMap);
+		
+		}
+	public List<User_1>getUserCreatedInLastFiveDays()
+	{
+		LocalDate today=LocalDate.now();
+		LocalDate StartDate=today.minusDays(5);
+		System.out.println(StartDate+"    "+today);
+		
+		Collection<User_1> users=UserMap.values();
+		List<User_1>result=	users.stream().filter(user->user.getUserCreatedOn()
+			.isAfter(StartDate)&&user.getUserCreatedOn().isBefore(today))
+			.collect(Collectors.toList());
+	return result;
+	}
+		public boolean softDeleteByUserId(Integer UserId)
+		{
+			{
+				if(Objects.isNull(UserId))
+						
+					throw new BadFormatException("User Id is not valid: ["+UserId+"]");
+				
+						
+		if(!UserMap.containsKey(UserId))
+
+			throw new UserNotFoundException("No user found by given Id:["+UserId+"]");
+			User_1 user1=UserMap.get(UserId);
+			user1.setActive(false);
+			return true;
+		}
+	}
+	}
+

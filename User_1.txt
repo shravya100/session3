@@ -1,0 +1,93 @@
+package test;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class User_1 {
+	String UserName;
+	String Role;
+	int UserId;
+	LocalDate userCreatedOn;
+	private Object isActive;
+	
+public User_1()//String userName, String role, int userId, LocalDate userCreatedOn)// 
+	{
+		super();
+//		UserName = userName;
+//		Role = role;
+//		UserId = userId;
+//		this.userCreatedOn = userCreatedOn;
+	}
+	Scanner sc=new Scanner(System.in);
+	public String getUserName() {
+		return UserName;
+	}
+	public void setUserName(String userName) {
+		UserName = userName;
+	}
+	public String getRole() {
+		return Role;
+	}
+	public void setRole(String role) {
+		Role = role;
+	}
+	
+
+	public int getUserId() {
+		return UserId;
+	}
+
+	public void setUserId(int userId) {
+		UserId = userId;
+	}
+
+	public LocalDate getUserCreatedOn() {
+		return userCreatedOn;
+	}
+
+	public void setUserCreatedOn(LocalDate userCreatedOn) {
+		this.userCreatedOn = userCreatedOn;
+	}
+	public boolean isActive()
+	{
+		return isActive();
+	}
+	public void setActive(boolean active)
+	{
+	isActive=active;	
+	}
+	
+
+//	//@Override
+//	public String toString() {
+//		return "User_1 [UserName=" + UserName + ", Role=" + Role + ", UserId=" + UserId + ", userCreatedOn="
+//				+ userCreatedOn + "]";
+//	}
+
+	public void CreateUser() {  
+		System.out.print("Enter UserName: "); 
+		UserName = sc.next();   
+	        System.out.print("Enter UserId: ");
+	        UserId= sc.nextInt();  
+	        System.out.print("Enter Role: ");  
+	        Role = sc.next();
+	        
+	        System.out.println("Account created Sucessfully");
+	 }
+	
+	public void searchById()
+	{  
+		
+		System.out.println("enter the User Id");
+	    int UserId1=  sc.nextInt();
+        if (UserId==UserId1)
+        {  
+              
+         System.out.println("account matched: ");    
+        }  
+    else
+    {
+    	System.out.println("Not matched");
+    }
+	}
+}

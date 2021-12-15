@@ -1,0 +1,25 @@
+package test;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class UserData {
+
+	public static void main(String[] args) {
+//		UserManager_1 UserManager=new UserManager_1();
+/*		UserManager.LoadStaticDataInMap();*/
+//		Scanner sc=new Scanner(System.in);
+//		System.out.println("Enter the User Id to be updated");
+//		Integer UserId=sc.nextInt();
+//		UserManager.updateUserById(UserId);
+//	UserManager.PrintMap();
+//		List<User_1> result=UserManager.getUserCreatedInLastFiveDays();
+//		System.out.println(result);
+//		UserManager.softDeleteByUserId(101);
+//		UserManager.PrintMap();
+		User_1 us=new User_1();
+		us.CreateUser();
+		us.searchById();
+	}
+
+}
